@@ -18,6 +18,9 @@
 
 @media screen and (max-width: 480px) {
   .calcScreen {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
     width: 80%;
     height: 100px;
     margin: auto;

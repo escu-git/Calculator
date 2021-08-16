@@ -1,5 +1,8 @@
 @include mediaQuery-phone{
     .calcScreen{
+        display:flex;
+        justify-content: flex-end;
+        font-size:2em;
         width:80%;
         height:100px;
         margin:auto;

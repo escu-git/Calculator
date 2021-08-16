@@ -5,6 +5,7 @@ export function createCalc(){
     calculatorContainer.className='calculatorContainer';
     buttonsArea.className='buttonsArea';
     calcScreen.className='calcScreen';
+    calcScreen.innerHTML=null;
     onOffBtn.className='onOffBtn';
     onOffBtn.style.gridArea='onOffBtn';
     let i;
@@ -45,9 +46,9 @@ export function createCalc(){
             })
         })
     })
-    let array = [numbers, symbols, calcFunctions].map(x=>x.forEach(x=>{
+    let array =[numbers, symbols, calcFunctions].forEach(x=>x.forEach(x=>{
         values.push({id:x.id, value:x.value})
     }
-        ))
+    ))
 }
 
