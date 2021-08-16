@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator by EscuDev",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escu-git/Calculator.git"
+  },
+  "keywords": [
+    "Calculator"
+  ],
+  "author": "Escudero Pablo Martín (EscuDev)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escu-git/Calculator/issues"
+  },
+  "homepage": "https://github.com/escu-git/Calculator#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

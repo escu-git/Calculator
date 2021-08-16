@@ -1,0 +1,8 @@
+@include mediaQuery-phone{
+    .calcScreen{
+        width:80%;
+        height:100px;
+        margin:auto;
+        background-color:grey;
+    }
+};
