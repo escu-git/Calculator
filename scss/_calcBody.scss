@@ -22,4 +22,57 @@
         text-align:center;
         height:300px;
     }
+};
+
+@include mediaQuery-tablet{
+    .calculatorContainer{
+        display:flex;
+        flex-direction:column;
+        width:400px;
+        height:500px;
+        background-color:lightgray;
+        border:1px solid black;
+        padding:2%;
+    };
+    .buttonsArea{
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows:repeat(5, 1fr);
+        grid-template-areas:
+        "onOff memory memory1 memory2 divide"
+        "change seven eight nine multiply"
+        "percent four five six minus"
+        "C one two three plus"
+        "AC zero dot equal plus";
+        width:100%;
+        text-align:center;
+        height:300px;
+    }
+}
+
+@include mediaQuery-desktop{
+    .calculatorContainer{
+        display:flex;
+        flex-direction:column;
+        width:400px;
+        height:500px;
+        background-color:lightgray;
+        border:1px solid black;
+        padding:2%;
+    };
+    .buttonsArea{
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows:repeat(5, 1fr);
+        grid-template-areas:
+        "onOff memory memory1 memory2 divide"
+        "change seven eight nine multiply"
+        "percent four five six minus"
+        "C one two three plus"
+        "AC zero dot equal plus";
+        width:100%;
+        gap:1px;
+        text-align:center;
+        height:300px;
+    }
 }

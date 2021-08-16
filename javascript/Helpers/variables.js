@@ -1,7 +1,9 @@
+import { operationHandler, equal, percent, change, erase, memory, memory1, memory2, reset } from "./calc.js";
 export const calcArea = document.getElementById('calcArea')
 export const calculatorContainer = document.createElement('div');
 export const calcScreen = document.createElement('div');
 export const buttonsArea = document.createElement('div');
+export const onOffArea = document.createElement('div');
 export const onOffBtn = document.createElement('div');
 export const values =[];
 
@@ -15,24 +17,22 @@ export const numbers = [
     {id:7, name:'seven', value:7}, 
     {id:8, name:'eight', value:8}, 
     {id:9, name:'nine', value:9}, 
-    {id:0, name:'zero', value:0}
+    {id:0, name:'zero', value:0},
+    {id:'.', name:'dot',value:"."}
 ];
 export const symbols = [
-    {id:'+', name:'plus',value:"+"}, 
-    {id:'-', name:'minus',value:"-"}, 
-    {id:'/',name:'divide',value:"/" }, 
-    {id:'*', name:'multiply',value:"*"}, 
-    /*{id:'(', name:'open',value:"("}, 
-    {id:')', name:'close',value:")"},*/
-    {id:'=', name:'equal',value:"="}, 
-    {id:'.', name:'dot',value:"."}, 
-    {id:'%', name:'percent',value:"%"}, 
-    {id:'+/-', name:'change',value:"+/-"}
+    {id:'+', name:'plus',value:"+", fn:operationHandler}, 
+    {id:'-', name:'minus',value:"-", fn:operationHandler}, 
+    {id:'/',name:'divide',value:"/",fn:operationHandler}, 
+    {id:'*', name:'multiply',value:"*", fn:operationHandler},
+    {id:'=', name:'equal',value:"=", fn:equal}, 
+    {id:'%', name:'percent',value:"%",fn:percent}, 
+    {id:'+/-', name:'change',value:"+/-",fn:change}
 ];
 export const calcFunctions = [
-    {id:'C', name:'C',value:"C"},
-    {id:'M',name:'memory',value:"M"},
-    {id:'+M', name:'memory1',value:"+M"},
-    {id:'-M', name:'memory2',value:"-M"},
-    {id:'AC', name:'AC',value:"AC"}
+    {id:'C', name:'C',value:"C", fn:erase},
+    {id:'M',name:'memory',value:"M", fn:memory},
+    {id:'+M', name:'memory1',value:"+M", fn:memory1},
+    {id:'-M', name:'memory2',value:"-M", fn:memory2},
+    {id:'AC', name:'AC',value:"AC", fn: reset}
 ];

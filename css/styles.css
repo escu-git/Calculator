@@ -1,3 +1,20 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.onOffArea {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .onOffArea .onOffBtn {
+    width: 40px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: red; }
+    .onOffArea .onOffBtn::before {
+      content: 'OFF'; }
+
 @media screen and (max-width: 480px) {
   .calculatorContainer {
     display: flex;
@@ -16,6 +33,43 @@
     text-align: center;
     height: 300px; } }
 
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 2%; }
+  .buttonsArea {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "onOff memory memory1 memory2 divide" "change seven eight nine multiply" "percent four five six minus" "C one two three plus" "AC zero dot equal plus";
+    width: 100%;
+    text-align: center;
+    height: 300px; } }
+
+@media screen and (min-width: 721px) {
+  .calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 2%; }
+  .buttonsArea {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "onOff memory memory1 memory2 divide" "change seven eight nine multiply" "percent four five six minus" "C one two three plus" "AC zero dot equal plus";
+    width: 100%;
+    gap: 1px;
+    text-align: center;
+    height: 300px; } }
+
 @media screen and (max-width: 480px) {
   .calcScreen {
     display: flex;
@@ -26,7 +80,49 @@
     margin: auto;
     background-color: grey; } }
 
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .calcScreen {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    background-color: grey; } }
+
+@media screen and (min-width: 721px) {
+  .calcScreen {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    background-color: grey;
+    border: 1px solid darkslategrey;
+    border-radius: 5px; } }
+
 @media screen and (max-width: 480px) {
+  .calcButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: rgba(27, 26, 26, 0.651);
+    color: white;
+    font-weight: 900; } }
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .calcButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: rgba(27, 26, 26, 0.651);
+    color: white;
+    font-weight: 900; } }
+
+@media screen and (min-width: 721px) {
   .calcButton {
     display: flex;
     justify-content: center;
