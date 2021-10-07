@@ -1,8 +1,37 @@
 @include mediaQuery-phone{
     .calcScreen{
+        display:flex;
+        justify-content: flex-end;
+        font-size:2em;
         width:80%;
         height:100px;
         margin:auto;
         background-color:grey;
+    }
+};
+
+@include mediaQuery-tablet{
+    .calcScreen{
+        display:flex;
+        justify-content: flex-end;
+        font-size:2em;
+        width:80%;
+        height:100px;
+        margin:auto;
+        background-color:grey;
+    }
+}
+
+@include mediaQuery-desktop{
+    .calcScreen{
+        display:flex;
+        justify-content: flex-end;
+        font-size:2em;
+        width:80%;
+        height:100px;
+        margin:auto;
+        background-color:grey;
+        border:1px solid darkslategrey;
+        border-radius: 5px;
     }
 };

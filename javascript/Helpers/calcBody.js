@@ -1,13 +1,17 @@
-import { calcArea, calculatorContainer, calcScreen, buttonsArea, onOffBtn, numbers, symbols, calcFunctions, values } from "./variables.js";
-import { listener } from "./listeners.js";
+import { calcArea, calculatorContainer, calcScreen, buttonsArea, onOffArea, numbers, symbols, calcFunctions, onOffBtn } from "./variables.js";
+import { numberHandler, operationHandler} from "./calc.js";
 
 export function createCalc(){
     calculatorContainer.className='calculatorContainer';
     buttonsArea.className='buttonsArea';
     calcScreen.className='calcScreen';
+    calcScreen.innerHTML=null;
     onOffBtn.className='onOffBtn';
-    onOffBtn.style.gridArea='onOffBtn';
+    onOffArea.appendChild(onOffBtn);
+    onOffArea.className='onOffArea';
+    onOffArea.style.gridArea='onOff';
     let i;
+
     for(i=0; i<numbers.length; i++){
         const numberButton = document.createElement('div');
         numberButton.innerHTML=numbers[i].id;
@@ -15,17 +19,22 @@ export function createCalc(){
         numberButton.classList.add('numberButton');
         numberButton.classList.add('calcButton');
         numberButton.style.gridArea=`${numbers[i].name}`;
+        numberButton.addEventListener('click',event=>numberHandler(event.path[0].innerText));
         buttonsArea.append(numberButton);
     };
+
     for(i=0; i < symbols.length; i++){
+        const {value, fn} = symbols[i]
         const symbolButton = document.createElement('div')
         symbolButton.innerHTML = symbols[i].id;
         symbolButton.setAttribute("id", symbols[i].name);
         symbolButton.style.gridArea=`${symbols[i].name}`
         symbolButton.classList.add('symbolButton');
-        symbolButton.classList.add('calcButton')
+        symbolButton.classList.add('calcButton');
+        symbolButton.addEventListener('click', event=>fn(value));
         buttonsArea.append(symbolButton);
     };
+
     for(i=0;i<calcFunctions.length;i++){
         const functionButton = document.createElement('div');
         functionButton.innerHTML = calcFunctions[i].id;
@@ -33,21 +42,12 @@ export function createCalc(){
         functionButton.style.gridArea=`${calcFunctions[i].name}`;
         functionButton.classList.add('functionButton');
         functionButton.classList.add('calcButton');
-        buttonsArea.append(functionButton)
+        functionButton.addEventListener('click',calcFunctions[i].fn);
+        buttonsArea.append(functionButton);
     };
+    buttonsArea.appendChild(onOffArea);
     calculatorContainer.append(calcScreen, buttonsArea);
     calcArea.append(calculatorContainer);
-    [numbers, symbols, calcFunctions].forEach(x=>{
-        x.forEach(x=>{
-            let btn = document.getElementById(x.name)
-            btn.addEventListener('click',event=>{
-                listener(event)
-            })
-        })
-    })
-    let array = [numbers, symbols, calcFunctions].map(x=>x.forEach(x=>{
-        values.push({id:x.id, value:x.value})
-    }
-        ))
+   
 }
 
